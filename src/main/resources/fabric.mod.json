@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "morevanillashields",
+	"version": "${version}",
+	"name": "More Vanilla Shields",
+	"description": "Tired of having just the normal vanilla Iron Shield? \n\nThere you go! \n\nA simple mod that allows you to craft more than just the vanilla Iron Shield! \n\n ${version}-alpha \n\nThis is the Fabric Version!",
+	"authors": [
+		"Rajhab"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/more-vanilla-shields",
+		"sources": "https://github.com/Rajhab/More-Vanilla-Shields-Fabric"
+	},
+	"license": "MIT",
+	"icon": "assets/morevanillashields/logo.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.rajhab.morevanillashields_mod.MoreVanillaShields"
+		],
+		"fabric-datagen": [
+			"com.rajhab.morevanillashields_mod.MoreVanillaShieldsDataGenerator"
+		],
+		"client": [
+			"com.rajhab.morevanillashields_mod.MoreVanillaShieldsClient"
+		]
+	},
+	"mixins": [
+		"morevanillashields.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
