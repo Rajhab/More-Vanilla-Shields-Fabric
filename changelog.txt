@@ -1,0 +1,3 @@
+Changelog 1.0.0-1.19.4:
+
+- Ported from 1.0.2-1.19.4 [FORGE] to 1.0.0-1.19.4 [FABRIC]
