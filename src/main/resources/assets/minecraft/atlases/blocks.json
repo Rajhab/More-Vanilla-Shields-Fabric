@@ -1,0 +1,12 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "morevanillashields:item/leather_shield_base"
+    },
+    {
+      "type": "single",
+      "resource": "morevanillashields:item/leather_shield_base_nopattern"
+    }
+  ]
+}
