@@ -5,4 +5,8 @@ Changelog 1.0.0-1.20.4:
 Changelog 1.0.1-1.20.4:
 
 - Updated Fabric to 0.15.11
-- Working on Banner Support without external libraries (fr im gona cry please help. i cant do this shi anymore)
+- Added Banner Support for every non-translucent Shield
+- Enhanced Creative Mode Tab
+
+- ToDo: Adding Translations for Banner Shields
+        Making the same shit for Forge and every other version

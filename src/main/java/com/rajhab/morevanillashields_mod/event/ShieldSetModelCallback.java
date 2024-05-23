@@ -1,4 +1,4 @@
-package com.rajhab.morevanillashields_mod.util;
+package com.rajhab.morevanillashields_mod.event;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;

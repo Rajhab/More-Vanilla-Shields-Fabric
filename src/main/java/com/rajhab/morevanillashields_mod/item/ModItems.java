@@ -1,17 +1,12 @@
 package com.rajhab.morevanillashields_mod.item;
 
-import com.rajhab.morevanillashields_mod.config.ModConfigs;
 import com.rajhab.morevanillashields_mod.morevanillashields;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ShieldItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -314,26 +309,26 @@ public class ModItems {
     }
 
     public static void itemGroupIngredients(FabricItemGroupEntries entries) {
-        entries.add(LEATHER_SHIELD);
-        entries.add(GOLD_SHIELD);
-        entries.add(DIAMOND_SHIELD);
-        entries.add(GLASS_SHIELD);
-        entries.add(TINTED_GLASS_SHIELD);
-        entries.add(BROWN_STAINED_GLASS_SHIELD);
-        entries.add(BLUE_STAINED_GLASS_SHIELD);
-        entries.add(CYAN_STAINED_GLASS_SHIELD);
-        entries.add(LIGHT_BLUE_STAINED_GLASS_SHIELD);
-        entries.add(GREEN_STAINED_GLASS_SHIELD);
-        entries.add(YELLOW_STAINED_GLASS_SHIELD);
-        entries.add(PINK_STAINED_GLASS_SHIELD);
-        entries.add(ORANGE_STAINED_GLASS_SHIELD);
-        entries.add(RED_STAINED_GLASS_SHIELD);
-        entries.add(NETHERITE_SHIELD);
-        entries.add(EMERALD_SHIELD);
-        entries.add(AMETHYST_SHIELD);
-        entries.add(OBSIDIAN_SHIELD);
-        entries.add(COAL_SHIELD);
-        entries.add(END_CRYSTAL_SHIELD);
+        entries.addAfter(Items.SHIELD, LEATHER_SHIELD);
+        entries.addAfter(LEATHER_SHIELD, GOLD_SHIELD);
+        entries.addAfter(GOLD_SHIELD, DIAMOND_SHIELD);
+        entries.addAfter(DIAMOND_SHIELD, NETHERITE_SHIELD);
+        entries.addAfter(NETHERITE_SHIELD, EMERALD_SHIELD);
+        entries.addAfter(EMERALD_SHIELD, AMETHYST_SHIELD);
+        entries.addAfter(AMETHYST_SHIELD, OBSIDIAN_SHIELD);
+        entries.addAfter(OBSIDIAN_SHIELD, COAL_SHIELD);
+        entries.addAfter(COAL_SHIELD, END_CRYSTAL_SHIELD);
+        entries.addAfter(END_CRYSTAL_SHIELD, GLASS_SHIELD);
+        entries.addAfter(GLASS_SHIELD, TINTED_GLASS_SHIELD);
+        entries.addAfter(TINTED_GLASS_SHIELD, BROWN_STAINED_GLASS_SHIELD);
+        entries.addAfter(BROWN_STAINED_GLASS_SHIELD, BLUE_STAINED_GLASS_SHIELD);
+        entries.addAfter(BLUE_STAINED_GLASS_SHIELD, CYAN_STAINED_GLASS_SHIELD);
+        entries.addAfter(CYAN_STAINED_GLASS_SHIELD, LIGHT_BLUE_STAINED_GLASS_SHIELD);
+        entries.addAfter(LIGHT_BLUE_STAINED_GLASS_SHIELD, GREEN_STAINED_GLASS_SHIELD);
+        entries.addAfter(GREEN_STAINED_GLASS_SHIELD, YELLOW_STAINED_GLASS_SHIELD);
+        entries.addAfter(YELLOW_STAINED_GLASS_SHIELD, PINK_STAINED_GLASS_SHIELD);
+        entries.addAfter(PINK_STAINED_GLASS_SHIELD, ORANGE_STAINED_GLASS_SHIELD);
+        entries.addAfter(ORANGE_STAINED_GLASS_SHIELD, RED_STAINED_GLASS_SHIELD);
     }
 
     public static void registerModItems() {
