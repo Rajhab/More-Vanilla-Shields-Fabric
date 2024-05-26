@@ -1,3 +1,11 @@
 Changelog 1.0.0-1.19.2:
 
 - Ported from 1.0.2-1.19.2 [FORGE] to 1.0.0-1.19.2 [FABRIC]
+
+Changelog 1.0.1-1.19.2:
+
+- Updated Fabric to 0.15.11
+- Added Banner Support for every non-translucent Shield
+- Enhanced Creative Mode Tab
+- Fixed Shield Scaling
+- Added Shield Decoration Recipes to Misc Tab (recipe book)
