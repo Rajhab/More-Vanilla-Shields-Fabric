@@ -6,6 +6,9 @@
 		"morevanillashieldsMixin",
 		"PlayerEntityMixin"
 	],
+	"client": [
+		"RendererMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	}
