@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "morevanillashields:leather_shield",
+    "morevanillashields:gold_shield",
+    "morevanillashields:diamond_shield",
+    "morevanillashields:netherite_shield",
+    "morevanillashields:emerald_shield",
+    "morevanillashields:amethyst_shield",
+    "morevanillashields:obsidian_shield",
+    "morevanillashields:coal_shield",
+    "morevanillashields:end_crystal_shield"
+  ]
+}

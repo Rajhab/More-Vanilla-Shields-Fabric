@@ -1,6 +1,5 @@
 package com.rajhab.morevanillashields_mod.util;
 
-
 import com.rajhab.morevanillashields_mod.item.ModItems;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
