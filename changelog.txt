@@ -9,3 +9,7 @@ Changelog 1.0.1-1.18.2:
 - Enhanced Creative Mode Tab
 - Fixed Shield Scaling
 - Added Shield Decoration Recipes to Misc Tab (recipe book)
+
+Changelog 1.0.2-1.18.2:
+
+- Fixed critical error for servers (sorry for inconvenience)
