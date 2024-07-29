@@ -379,7 +379,8 @@ public class ModItems {
         entries.addAfter(DIAMOND_SHIELD, NETHERITE_SHIELD);
         entries.addAfter(NETHERITE_SHIELD, EMERALD_SHIELD);
         entries.addAfter(EMERALD_SHIELD, AMETHYST_SHIELD);
-        entries.addAfter(AMETHYST_SHIELD, OBSIDIAN_SHIELD);
+        entries.addAfter(AMETHYST_SHIELD, REDSTONE_SHIELD);
+        entries.addAfter(REDSTONE_SHIELD, OBSIDIAN_SHIELD);
         entries.addAfter(OBSIDIAN_SHIELD, COAL_SHIELD);
         entries.addAfter(COAL_SHIELD, END_CRYSTAL_SHIELD);
         entries.addAfter(END_CRYSTAL_SHIELD, GLASS_SHIELD);
