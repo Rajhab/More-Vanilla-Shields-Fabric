@@ -1,6 +1,5 @@
 package com.rajhab.morevanillashields_mod;
 
-import com.rajhab.morevanillashields_mod.config.ModConfigs;
 import com.rajhab.morevanillashields_mod.item.ModItems;
 import com.rajhab.morevanillashields_mod.util.ModRegistries;
 import com.rajhab.morevanillashields_mod.util.ModShieldDecoratorRecipe;
@@ -34,7 +33,6 @@ public class morevanillashields implements ModInitializer {
 
 		LOGGER.info(MOD_ID + ": This mod runs without a config file. Coming Soon in next updates!");
 
-		ModConfigs.registerConfigs();
 		ModItems.registerModItems();
 		ModRegistries.registerModStuffs();
 
