@@ -4,17 +4,22 @@ import com.rajhab.morevanillashields_mod.morevanillashields;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Vector3d;
 
 import java.util.List;
+import java.util.Random;
 
 public class ModItems {
 
@@ -297,6 +302,63 @@ public class ModItems {
 
             });
 
+    public static final Item REDSTONE_SHIELD = registerItem("redstone_shield",
+            new ShieldItem(new Item.Settings().maxDamage(250)){
+
+                @Override
+                public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+                    if (Screen.hasShiftDown()) {
+                        tooltip.add(Text.translatable("item.moditems.redstone_shield").append("250").append(Text.translatable("item.moditems.redstone_shield.particles_enabled")).formatted(Formatting.DARK_AQUA));
+                    } else {
+                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                    }
+
+                    super.appendTooltip(stack, context, tooltip, type);
+                }
+
+                @Override
+                public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+
+                    float pAlpha = 1;
+                    float yaw = -user.getYaw();
+                    float pitch = -user.getPitch();
+
+                    double offsetX = 0.5 * Math.sin(Math.toRadians(yaw));
+                    double offsetY = 0.5 * Math.sin(Math.toRadians(pitch));
+                    double offsetZ = 0.5 * Math.cos(Math.toRadians(yaw));
+
+                    Vector3d offsetVector = new Vector3d(0.0, 0.0, 0.0);
+
+                    offsetVector.rotateX(-pitch * Math.PI / 180.0);
+                    offsetVector.rotateZ(-yaw * Math.PI / 180.0);
+
+                    offsetX += offsetVector.x;
+                    offsetY += offsetVector.y;
+                    offsetZ += offsetVector.z;
+
+                    Random rand = new Random();
+
+                    if (!world.isClient) {
+
+                        ServerWorld pServerLevel = (ServerWorld) world;
+
+                        for (double countparticles = 0; countparticles <= 0.1; ++countparticles) {
+                            pServerLevel.spawnParticles(
+                                    new DustParticleEffect(DustParticleEffect.RED, pAlpha),
+                                    (user.getX() + offsetX) + (rand.nextDouble() - 0.5D),
+                                    (user.getY() + offsetY) + (rand.nextDouble() + 0.5D),
+                                    (user.getZ() + offsetZ) + (rand.nextDouble() - 0.5D),
+                                    1,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    1.0
+                            );
+                        }
+                    }
+                }
+            });
+
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(morevanillashields.MOD_ID, name), item);
@@ -309,7 +371,8 @@ public class ModItems {
         entries.addAfter(DIAMOND_SHIELD, NETHERITE_SHIELD);
         entries.addAfter(NETHERITE_SHIELD, EMERALD_SHIELD);
         entries.addAfter(EMERALD_SHIELD, AMETHYST_SHIELD);
-        entries.addAfter(AMETHYST_SHIELD, OBSIDIAN_SHIELD);
+        entries.addAfter(AMETHYST_SHIELD, REDSTONE_SHIELD);
+        entries.addAfter(REDSTONE_SHIELD, OBSIDIAN_SHIELD);
         entries.addAfter(OBSIDIAN_SHIELD, COAL_SHIELD);
         entries.addAfter(COAL_SHIELD, END_CRYSTAL_SHIELD);
         entries.addAfter(END_CRYSTAL_SHIELD, GLASS_SHIELD);
