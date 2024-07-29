@@ -36,6 +36,7 @@ public class morevanillashieldsClient implements ClientModInitializer {
     public static final EntityModelLayer netherite_shield_model_layer = new EntityModelLayer(new Identifier(morevanillashields.MOD_ID, "netherite_shield"),"main");
     public static final EntityModelLayer emerald_shield_model_layer = new EntityModelLayer(new Identifier(morevanillashields.MOD_ID, "emerald_shield"),"main");
     public static final EntityModelLayer amethyst_shield_model_layer = new EntityModelLayer(new Identifier(morevanillashields.MOD_ID, "amethyst_shield"),"main");
+    public static final EntityModelLayer redstone_shield_model_layer = new EntityModelLayer(new Identifier(morevanillashields.MOD_ID, "redstone_shield"),"main");
     public static final EntityModelLayer obsidian_shield_model_layer = new EntityModelLayer(new Identifier(morevanillashields.MOD_ID, "obsidian_shield"),"main");
     public static final EntityModelLayer coal_shield_model_layer = new EntityModelLayer(new Identifier(morevanillashields.MOD_ID, "coal_shield"),"main");
     public static final EntityModelLayer end_crystal_shield_model_layer = new EntityModelLayer(new Identifier(morevanillashields.MOD_ID, "end_crystal_shield"),"main");
@@ -45,6 +46,7 @@ public class morevanillashieldsClient implements ClientModInitializer {
     public static ShieldEntityModel modelNetheriteShield;
     public static ShieldEntityModel modelEmeraldShield;
     public static ShieldEntityModel modelAmethystShield;
+    public static ShieldEntityModel modelRedstoneShield;
     public static ShieldEntityModel modelObsidianShield;
     public static ShieldEntityModel modelCoalShield;
     public static ShieldEntityModel modelEndCrystalShield;
@@ -74,6 +76,10 @@ public class morevanillashieldsClient implements ClientModInitializer {
     @SuppressWarnings("deprecation")
     public static final SpriteIdentifier AMETHYST_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(morevanillashields.MOD_ID, "entity/amethyst_shield_base_nopattern"));
     @SuppressWarnings("deprecation")
+    public static final SpriteIdentifier REDSTONE_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(morevanillashields.MOD_ID, "entity/redstone_shield_base"));
+    @SuppressWarnings("deprecation")
+    public static final SpriteIdentifier REDSTONE_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(morevanillashields.MOD_ID, "entity/redstone_shield_base_nopattern"));
+    @SuppressWarnings("deprecation")
     public static final SpriteIdentifier OBSIDIAN_SHIELD_BASE = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(morevanillashields.MOD_ID, "entity/obsidian_shield_base"));
     @SuppressWarnings("deprecation")
     public static final SpriteIdentifier OBSIDIAN_SHIELD_BASE_NO_PATTERN = new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, new Identifier(morevanillashields.MOD_ID, "entity/obsidian_shield_base_nopattern"));
@@ -95,6 +101,7 @@ public class morevanillashieldsClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(netherite_shield_model_layer, ShieldEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(emerald_shield_model_layer, ShieldEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(amethyst_shield_model_layer, ShieldEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(redstone_shield_model_layer, ShieldEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(obsidian_shield_model_layer, ShieldEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(coal_shield_model_layer, ShieldEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(end_crystal_shield_model_layer, ShieldEntityModel::getTexturedModelData);
@@ -107,6 +114,7 @@ public class morevanillashieldsClient implements ClientModInitializer {
             modelNetheriteShield = new ShieldEntityModel(loader.getModelPart(morevanillashieldsClient.netherite_shield_model_layer));
             modelEmeraldShield = new ShieldEntityModel(loader.getModelPart(morevanillashieldsClient.emerald_shield_model_layer));
             modelAmethystShield = new ShieldEntityModel(loader.getModelPart(morevanillashieldsClient.amethyst_shield_model_layer));
+            modelRedstoneShield = new ShieldEntityModel(loader.getModelPart(morevanillashieldsClient.redstone_shield_model_layer));
             modelObsidianShield = new ShieldEntityModel(loader.getModelPart(morevanillashieldsClient.obsidian_shield_model_layer));
             modelCoalShield = new ShieldEntityModel(loader.getModelPart(morevanillashieldsClient.coal_shield_model_layer));
             modelEndCrystalShield = new ShieldEntityModel(loader.getModelPart(morevanillashieldsClient.end_crystal_shield_model_layer));
@@ -167,6 +175,9 @@ public class morevanillashieldsClient implements ClientModInitializer {
         ModelPredicateProviderRegistry.register(ModItems.AMETHYST_SHIELD, new Identifier("blocking"),
                 (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0f : 0.0f);
 
+        ModelPredicateProviderRegistry.register(ModItems.REDSTONE_SHIELD, new Identifier("blocking"),
+                (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0f : 0.0f);
+
         ModelPredicateProviderRegistry.register(ModItems.OBSIDIAN_SHIELD, new Identifier("blocking"),
                 (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0f : 0.0f);
 
@@ -195,6 +206,9 @@ public class morevanillashieldsClient implements ClientModInitializer {
         BuiltinItemRendererRegistry.INSTANCE.register(ModItems.AMETHYST_SHIELD, (stack, mode, matrices, vertexConsumers, light, overlay) -> {
             renderBanner(stack, matrices, vertexConsumers, light, overlay, modelAmethystShield, AMETHYST_SHIELD_BASE, AMETHYST_SHIELD_BASE_NO_PATTERN);
         });
+        BuiltinItemRendererRegistry.INSTANCE.register(ModItems.REDSTONE_SHIELD, (stack, mode, matrices, vertexConsumers, light, overlay) -> {
+            renderBanner(stack, matrices, vertexConsumers, light, overlay, modelRedstoneShield, REDSTONE_SHIELD_BASE, REDSTONE_SHIELD_BASE_NO_PATTERN);
+        });
         BuiltinItemRendererRegistry.INSTANCE.register(ModItems.OBSIDIAN_SHIELD, (stack, mode, matrices, vertexConsumers, light, overlay) -> {
             renderBanner(stack, matrices, vertexConsumers, light, overlay, modelObsidianShield, OBSIDIAN_SHIELD_BASE, OBSIDIAN_SHIELD_BASE_NO_PATTERN);
         });
@@ -206,6 +220,8 @@ public class morevanillashieldsClient implements ClientModInitializer {
         });
 
     }
+
+
 
     public static void renderBanner(ItemStack stack, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, ShieldEntityModel model, SpriteIdentifier base, SpriteIdentifier base_nopattern){
         boolean bl = stack.getSubNbt("BlockEntityTag") != null;
