@@ -6,16 +6,21 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.*;
+import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Vector3d;
 
 import java.util.List;
+import java.util.Random;
 
 public class ModItems {
 
@@ -301,6 +306,65 @@ public class ModItems {
                     return true;
                 }
 
+            });
+
+    public static final Item REDSTONE_SHIELD = registerItem("redstone_shield",
+            new ShieldItem(new Item.Settings().maxDamage(250)){
+
+                @Override
+                public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+                    if (Screen.hasShiftDown()) {
+                        tooltip.add(Text.translatable("item.moditems.redstone_shield").append("250").append(Text.translatable("item.moditems.redstone_shield.particles_enabled")).formatted(Formatting.DARK_AQUA));
+                    } else {
+                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                    }
+
+                    super.appendTooltip(stack, world, tooltip, context);
+                }
+
+                @Override
+                public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+
+                    float pAlpha = 1;
+                    float yaw = -user.getYaw();
+                    float pitch = -user.getPitch();
+
+                    double offsetX = 0.5 * Math.sin(Math.toRadians(yaw));
+                    double offsetY = 0.5 * Math.sin(Math.toRadians(pitch));
+                    double offsetZ = 0.5 * Math.cos(Math.toRadians(yaw));
+
+                    Vector3d offsetVector = new Vector3d(0.0, 0.0, 0.0);
+
+                    offsetVector.rotateX(-pitch * Math.PI / 180.0);
+                    offsetVector.rotateZ(-yaw * Math.PI / 180.0);
+
+                    offsetX += offsetVector.x;
+                    offsetY += offsetVector.y;
+                    offsetZ += offsetVector.z;
+
+                    Random rand = new Random();
+
+                    if (!world.isClient) {
+
+                        ServerWorld pServerLevel = (ServerWorld) world;
+
+                        for (double countparticles = 0; countparticles <= 0.1; ++countparticles) {
+                            pServerLevel.spawnParticles(
+                                    new DustParticleEffect(DustParticleEffect.RED, pAlpha),
+                                    (user.getX() + offsetX) + (rand.nextDouble() - 0.5D),
+                                    (user.getY() + offsetY) + (rand.nextDouble() + 0.5D),
+                                    (user.getZ() + offsetZ) + (rand.nextDouble() - 0.5D),
+                                    1,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    1.0
+                            );
+                        }
+                    }
+
+                    //world.createExplosion(user, user.getX(), user.getY() + 1, user.getZ() + 1, 0.1F, World.ExplosionSourceType.TNT);
+                }
             });
 
 
