@@ -15,7 +15,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3d;
 
 import java.util.List;
@@ -29,9 +28,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.leather_shield").append("196").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.leather_shield_description").append("196").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -42,9 +41,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.gold_shield").append("322").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.gold_shield_description").append("322").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -55,9 +54,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.diamond_shield").append("512").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.diamond_shield_description").append("512").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -68,9 +67,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -81,9 +80,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.tinted_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.tinted_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -94,9 +93,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.brown_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.brown_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -107,9 +106,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.blue_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.blue_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -120,9 +119,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.cyan_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.cyan_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -133,9 +132,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.light_blue_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.light_blue_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -146,9 +145,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.green_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.green_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -159,9 +158,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.lime_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.lime_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -172,9 +171,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.yellow_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.yellow_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -185,9 +184,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.pink_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.pink_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -198,9 +197,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.orange_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.orange_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -211,9 +210,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.red_stained_glass_shield").append("300").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.red_stained_glass_shield_description").append("300").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -224,9 +223,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.netherite_shield").append("2042").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.netherite_shield_description").append("2042").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -237,9 +236,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.emerald_shield").append("512").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.emerald_shield_description").append("512").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -250,9 +249,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.amethyst_shield").append("432").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.amethyst_shield_description").append("432").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -263,9 +262,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.obsidian_shield").append("610").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.obsidian_shield_description").append("610").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -276,9 +275,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.coal_shield").append("268").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.coal_shield_description").append("268").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
             });
@@ -289,9 +288,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.end_crystal_shield").append("750").formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.end_crystal_shield_description").append("750").formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
                 }
 
@@ -308,9 +307,9 @@ public class ModItems {
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("item.moditems.redstone_shield").append("250").append(Text.translatable("item.moditems.redstone_shield.particles_enabled")).formatted(Formatting.DARK_AQUA));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.redstone_shield_description").append("250").append(Text.translatable("tag.item.morevanillashields.redstone_shield.particles_enabled_description")).formatted(Formatting.DARK_AQUA));
                     } else {
-                        tooltip.add(Text.translatable("item.moditems.shift").formatted(Formatting.LIGHT_PURPLE));
+                        tooltip.add(Text.translatable("tag.item.morevanillashields.shift_description").formatted(Formatting.LIGHT_PURPLE));
                     }
 
                     super.appendTooltip(stack, context, tooltip, type);
@@ -356,6 +355,8 @@ public class ModItems {
                             );
                         }
                     }
+
+                    //world.createExplosion(user, user.getX(), user.getY() + 1, user.getZ() + 1, 0.1F, World.ExplosionSourceType.TNT);
                 }
             });
 
