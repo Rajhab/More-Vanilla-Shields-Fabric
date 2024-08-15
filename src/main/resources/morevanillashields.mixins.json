@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "com.rajhab.morevanillashields_mod.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"morevanillashieldsMixin",
+		"PlayerEntityMixin"
+	],
+	"client": [
+		"RendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
