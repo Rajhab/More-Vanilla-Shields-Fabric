@@ -7,3 +7,7 @@ Changelog 1.0.1-1.21:
 - Added Redstone Shield with Particle System
 - Added tooltip that shows if particles are enabled or disabled
 - Fixed Mod Descriptions and Links
+
+Changelog 1.0.2-1.21:
+
+- Fixed Enchanting Feature for Anvils in Survival
