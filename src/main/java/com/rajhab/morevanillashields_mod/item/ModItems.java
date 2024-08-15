@@ -4,6 +4,8 @@ import com.rajhab.morevanillashields_mod.morevanillashields;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.BannerPatternsComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
@@ -23,7 +25,7 @@ import java.util.Random;
 public class ModItems {
 
     public static final Item LEATHER_SHIELD = registerItem("leather_shield",
-            new ShieldItem(new Item.Settings().maxDamage(196)){
+            new ShieldItem(new Item.Settings().maxDamage(196).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -36,7 +38,7 @@ public class ModItems {
             });
 
     public static final Item GOLD_SHIELD = registerItem("gold_shield",
-            new ShieldItem(new Item.Settings().maxDamage(322)){
+            new ShieldItem(new Item.Settings().maxDamage(322).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -49,7 +51,7 @@ public class ModItems {
             });
 
     public static final Item DIAMOND_SHIELD = registerItem("diamond_shield",
-            new ShieldItem(new Item.Settings().maxDamage(512)){
+            new ShieldItem(new Item.Settings().maxDamage(512).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -62,7 +64,7 @@ public class ModItems {
             });
 
     public static final Item GLASS_SHIELD = registerItem("glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -75,7 +77,7 @@ public class ModItems {
             });
 
     public static final Item TINTED_GLASS_SHIELD = registerItem("tinted_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -88,7 +90,7 @@ public class ModItems {
             });
 
     public static final Item BROWN_STAINED_GLASS_SHIELD = registerItem("brown_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -101,7 +103,7 @@ public class ModItems {
             });
 
     public static final Item BLUE_STAINED_GLASS_SHIELD = registerItem("blue_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -114,7 +116,7 @@ public class ModItems {
             });
 
     public static final Item CYAN_STAINED_GLASS_SHIELD = registerItem("cyan_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -127,7 +129,7 @@ public class ModItems {
             });
 
     public static final Item LIGHT_BLUE_STAINED_GLASS_SHIELD = registerItem("light_blue_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -140,7 +142,7 @@ public class ModItems {
             });
 
     public static final Item GREEN_STAINED_GLASS_SHIELD = registerItem("green_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -153,7 +155,7 @@ public class ModItems {
             });
 
     public static final Item LIME_STAINED_GLASS_SHIELD = registerItem("lime_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -166,7 +168,7 @@ public class ModItems {
             });
 
     public static final Item YELLOW_STAINED_GLASS_SHIELD = registerItem("yellow_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -179,7 +181,7 @@ public class ModItems {
             });
 
     public static final Item PINK_STAINED_GLASS_SHIELD = registerItem("pink_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -192,7 +194,7 @@ public class ModItems {
             });
 
     public static final Item ORANGE_STAINED_GLASS_SHIELD = registerItem("orange_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -205,7 +207,7 @@ public class ModItems {
             });
 
     public static final Item RED_STAINED_GLASS_SHIELD = registerItem("red_stained_glass_shield",
-            new ShieldItem(new Item.Settings().maxDamage(300)){
+            new ShieldItem(new Item.Settings().maxDamage(300).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -218,7 +220,7 @@ public class ModItems {
             });
 
     public static final Item NETHERITE_SHIELD = registerItem("netherite_shield",
-            new ShieldItem(new Item.Settings().maxDamage(2042).fireproof()){
+            new ShieldItem(new Item.Settings().maxDamage(2042).fireproof().component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -231,7 +233,7 @@ public class ModItems {
             });
 
     public static final Item EMERALD_SHIELD = registerItem("emerald_shield",
-            new ShieldItem(new Item.Settings().maxDamage(512)){
+            new ShieldItem(new Item.Settings().maxDamage(512).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -244,7 +246,7 @@ public class ModItems {
             });
 
     public static final Item AMETHYST_SHIELD = registerItem("amethyst_shield",
-            new ShieldItem(new Item.Settings().maxDamage(432)){
+            new ShieldItem(new Item.Settings().maxDamage(432).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -257,7 +259,7 @@ public class ModItems {
             });
 
     public static final Item OBSIDIAN_SHIELD = registerItem("obsidian_shield",
-            new ShieldItem(new Item.Settings().maxDamage(610)){
+            new ShieldItem(new Item.Settings().maxDamage(610).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -270,7 +272,7 @@ public class ModItems {
             });
 
     public static final Item COAL_SHIELD = registerItem("coal_shield",
-            new ShieldItem(new Item.Settings().maxDamage(268)){
+            new ShieldItem(new Item.Settings().maxDamage(268).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -283,7 +285,7 @@ public class ModItems {
             });
 
     public static final Item END_CRYSTAL_SHIELD = registerItem("end_crystal_shield",
-            new ShieldItem(new Item.Settings().maxDamage(750)){
+            new ShieldItem(new Item.Settings().maxDamage(750).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -302,7 +304,7 @@ public class ModItems {
             });
 
     public static final Item REDSTONE_SHIELD = registerItem("redstone_shield",
-            new ShieldItem(new Item.Settings().maxDamage(250)){
+            new ShieldItem(new Item.Settings().maxDamage(250).component(DataComponentTypes.BANNER_PATTERNS, BannerPatternsComponent.DEFAULT)){
 
                 @Override
                 public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {

@@ -11,3 +11,4 @@ Changelog 1.0.1-1.21:
 Changelog 1.0.2-1.21:
 
 - Fixed Enchanting Feature for Anvils in Survival
+- Added banner Component (just for safety)
