@@ -3,10 +3,11 @@ package com.rajhab.morevanillashields_mod.event;
 import com.rajhab.morevanillashields_mod.item.ModItems;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 
 import java.util.Random;
@@ -40,6 +41,28 @@ public class ShieldEventHandler {
     private static void createExplosion(ServerWorld serverWorld, Vec3d pos, LivingEntity serverLivingEntity) {
         if (!serverWorld.isClient && serverWorld instanceof ServerWorld) {
             serverWorld.createExplosion(serverLivingEntity, pos.getX(), pos.getY(), pos.getZ(), 5.0F, Explosion.DestructionType.NONE);
+
+            applyShieldDamage(serverLivingEntity);
         }
+    }
+
+    private static void applyShieldDamage(LivingEntity livingEntity) {
+        // Check both hands for the shield
+        ItemStack mainHandStack = livingEntity.getStackInHand(Hand.MAIN_HAND);
+        ItemStack offHandStack = livingEntity.getStackInHand(Hand.OFF_HAND);
+
+        // Apply damage to the shield if found
+        if (mainHandStack.getItem() == ModItems.END_CRYSTAL_SHIELD) {
+            damageShield(mainHandStack, livingEntity);
+        }
+        if (offHandStack.getItem() == ModItems.END_CRYSTAL_SHIELD) {
+            damageShield(offHandStack, livingEntity);
+        }
+    }
+
+    private static void damageShield(ItemStack shield, LivingEntity user) {
+        int fixedDamageAmount = 175; // Fixed damage amount
+        shield.damage(fixedDamageAmount, user, (entity) -> {
+        });
     }
 }
