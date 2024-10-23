@@ -3,7 +3,7 @@
 	"id": "morevanillashields",
 	"version": "${version}",
 	"name": "More Vanilla Shields",
-	"description": "Tired of having just the normal vanilla Iron Shield? \n\nThere you go! \n\nA simple mod that allows you to craft more than just the vanilla Iron Shield! \n\n 1.0.4-1.20.3-0.15.11 \n\nThis is the Fabric Version!",
+	"description": "Tired of having just the normal vanilla Iron Shield? \n\nThere you go! \n\nA simple mod that allows you to craft more than just the vanilla Iron Shield! \n\n 1.0.5-1.20.3-0.16.7 \n\nThis is the Fabric Version!",
 	"authors": [
 		"Rajhab"
 	],
@@ -30,7 +30,7 @@
 		"morevanillashields.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
+		"fabricloader": ">=0.16.7",
 		"minecraft": "~1.20.3",
 		"java": ">=17",
 		"fabric-api": "*"
