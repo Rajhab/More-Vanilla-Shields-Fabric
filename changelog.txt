@@ -1,0 +1,3 @@
+Changelog 1.0.0-1.21.3:
+
+- Ported from 1.0.1-1.21.1 [FABRIC] to 1.0.0-1.21.3 [FABRIC]
