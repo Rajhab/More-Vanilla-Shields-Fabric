@@ -47,11 +47,9 @@ public class ShieldEventHandler {
     }
 
     private static void applyShieldDamage(LivingEntity livingEntity) {
-        // Check both hands for the shield
         ItemStack mainHandStack = livingEntity.getStackInHand(Hand.MAIN_HAND);
         ItemStack offHandStack = livingEntity.getStackInHand(Hand.OFF_HAND);
 
-        // Apply damage to the shield if found
         if (mainHandStack.getItem() == ModItems.END_CRYSTAL_SHIELD) {
             damageShield(mainHandStack, livingEntity);
         }
@@ -61,7 +59,7 @@ public class ShieldEventHandler {
     }
 
     private static void damageShield(ItemStack shield, LivingEntity user) {
-        int fixedDamageAmount = 175; // Fixed damage amount
+        int fixedDamageAmount = 175;
         shield.damage(fixedDamageAmount, user, (entity) -> {
         });
     }
