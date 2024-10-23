@@ -348,7 +348,7 @@ public class ModItems {
 
                         ServerWorld pServerLevel = (ServerWorld) world;
 
-                        for (double countparticles = 0; countparticles <= 0.1; ++countparticles) {
+                        for (double countparticles = 0; countparticles <= 1; ++countparticles) {
                             pServerLevel.spawnParticles(
                                     new DustParticleEffect(DustParticleEffect.RED, pAlpha),
                                     (user.getX() + offsetX) + (rand.nextDouble() - 0.5D),
