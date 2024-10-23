@@ -1,5 +1,6 @@
 package com.rajhab.morevanillashields_mod;
 
+import com.rajhab.morevanillashields_mod.event.ShieldEventHandler;
 import com.rajhab.morevanillashields_mod.item.ModItems;
 import com.rajhab.morevanillashields_mod.util.ModRegistries;
 import com.rajhab.morevanillashields_mod.util.ModShieldDecoratorRecipe;
@@ -36,6 +37,7 @@ public class morevanillashields implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModRegistries.registerModStuffs();
+		ShieldEventHandler.registerEventStuff();
 
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
 			LOGGER.info(MOD_ID + ": This mod is now running on a server. Please report any error or bugs.");
