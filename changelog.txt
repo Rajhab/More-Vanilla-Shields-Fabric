@@ -22,3 +22,11 @@ Changelog 1.0.3-1.20.4:
 Changelog 1.0.4-1.20.4:
 
 - Fixed Enchanting Feature for Anvils in Survival
+
+Changelog 1.0.5-1.20.4:
+
+- Updated to 0.16.7
+- Fixed typo in german translation
+- Fixed Redstone Shield Particle Density
+- Made the End Crystal Shield explosive (turned on by default. To disable go into config)
+- Made End Crystal Shield Explosion serversided
