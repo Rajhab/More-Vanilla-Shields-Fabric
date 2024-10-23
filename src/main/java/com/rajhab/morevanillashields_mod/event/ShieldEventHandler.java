@@ -2,8 +2,12 @@ package com.rajhab.morevanillashields_mod.event;
 
 import com.rajhab.morevanillashields_mod.item.ModItems;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -19,7 +23,7 @@ public class ShieldEventHandler {
 
                 if (isBlockingWithEndCrystalShield(attacker)) {
                         Random random = new Random();
-                        if (random.nextInt(30) == 0) {
+                        if (random.nextInt(10) == 0) {
                             createExplosion((ServerWorld) attacker.getWorld(), attacker.getPos(), attacker);
                         }
                     }
@@ -39,6 +43,35 @@ public class ShieldEventHandler {
     private static void createExplosion(ServerWorld serverWorld, Vec3d pos, LivingEntity serverLivingEntity) {
         if (!serverWorld.isClient && serverWorld instanceof ServerWorld) {
             serverWorld.createExplosion(serverLivingEntity, pos.getX(), pos.getY(), pos.getZ(), 5.0F, World.ExplosionSourceType.NONE);
+
+            applyShieldDamage(serverLivingEntity);
+        }
+    }
+
+    private static void applyShieldDamage(LivingEntity livingEntity) {
+        ItemStack mainHandStack = livingEntity.getStackInHand(Hand.MAIN_HAND);
+        ItemStack offHandStack = livingEntity.getStackInHand(Hand.OFF_HAND);
+
+        if (mainHandStack.getItem() == ModItems.END_CRYSTAL_SHIELD) {
+            damageShield(mainHandStack, livingEntity);
+        }
+        if (offHandStack.getItem() == ModItems.END_CRYSTAL_SHIELD) {
+            damageShield(offHandStack, livingEntity);
+        }
+    }
+
+    private static void damageShield(ItemStack shield, LivingEntity user) {
+        int fixedDamageAmount = 175;
+
+        ItemStack mainHandStack = user.getStackInHand(Hand.MAIN_HAND);
+        ItemStack offHandStack = user.getStackInHand(Hand.OFF_HAND);
+
+        if (mainHandStack.getItem() == ModItems.END_CRYSTAL_SHIELD) {
+            shield.damage(fixedDamageAmount, user, EquipmentSlot.MAINHAND);
+        }
+
+        if (offHandStack.getItem() == ModItems.END_CRYSTAL_SHIELD) {
+            shield.damage(fixedDamageAmount, user, EquipmentSlot.MAINHAND);
         }
     }
 }
