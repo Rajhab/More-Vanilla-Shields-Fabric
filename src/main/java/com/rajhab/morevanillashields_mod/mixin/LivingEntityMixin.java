@@ -25,7 +25,7 @@ public class LivingEntityMixin {
 
             if (isBlockingWithEndCrystalShield(livingEntity)) {
                 Random random = new Random();
-                if (random.nextInt(10) == 0) {
+                if (random.nextInt(30) == 0) {
                     createExplosion((ServerWorld) livingEntity.getWorld(), livingEntity.getPos(), livingEntity);
                 }
             }
