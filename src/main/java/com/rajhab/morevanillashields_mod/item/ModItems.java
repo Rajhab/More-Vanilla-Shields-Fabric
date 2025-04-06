@@ -12,6 +12,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.particle.DustParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -146,6 +147,48 @@ public class ModItems {
                     }
 
                     super.appendTooltip(stack, world, tooltip, context);
+                }
+
+                @Override
+                public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+
+                    float pAlpha = 1;
+                    float yaw = -user.getYaw();
+                    float pitch = -user.getPitch();
+
+                    double offsetX = 0.5 * Math.sin(Math.toRadians(yaw));
+                    double offsetY = 0.5 * Math.sin(Math.toRadians(pitch));
+                    double offsetZ = 0.5 * Math.cos(Math.toRadians(yaw));
+
+                    ModVector3d offsetVector = new ModVector3d(0.0, 0.0, 0.0);
+
+                    offsetVector.rotateX(-pitch * Math.PI / 180.0);
+                    offsetVector.rotateZ(-yaw * Math.PI / 180.0);
+
+                    offsetX += offsetVector.x;
+                    offsetY += offsetVector.y;
+                    offsetZ += offsetVector.z;
+
+                    Random rand = new Random();
+
+                    if (!world.isClient) {
+
+                        ServerWorld pServerLevel = (ServerWorld) world;
+
+                        for (double countparticles = 0; countparticles <= 1; ++countparticles) {
+                            pServerLevel.spawnParticles(
+                                    ParticleTypes.SMALL_FLAME,
+                                    (user.getX() + offsetX) + (rand.nextDouble() - 0.5D),
+                                    (user.getY() + offsetY) + (rand.nextDouble() + 0.5D),
+                                    (user.getZ() + offsetZ) + (rand.nextDouble() - 0.5D),
+                                    1,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.1
+                            );
+                        }
+                    }
                 }
             });
 
