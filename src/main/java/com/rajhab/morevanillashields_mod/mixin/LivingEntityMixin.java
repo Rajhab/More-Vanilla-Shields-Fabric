@@ -1,6 +1,7 @@
 package com.rajhab.morevanillashields_mod.mixin;
 
 import com.rajhab.morevanillashields_mod.item.ModItems;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,12 +30,27 @@ public class LivingEntityMixin {
                     createExplosion((ServerWorld) livingEntity.getWorld(), livingEntity.getPos(), livingEntity);
                 }
             }
+
+        if (isBlockingWithMagmaShield(livingEntity)) {
+            Entity attackerEntity = source.getAttacker();
+            if (attackerEntity instanceof LivingEntity attacker) {
+                attacker.setOnFireFor(5); // Set attacker on fire for 5 seconds
+            }
+        }
     }
 
     private boolean isBlockingWithEndCrystalShield(LivingEntity livingEntity) {
         if (livingEntity.isUsingItem()) {
             return livingEntity.getStackInHand(Hand.OFF_HAND).getItem() == ModItems.END_CRYSTAL_SHIELD ||
                     livingEntity.getStackInHand(Hand.MAIN_HAND).getItem() == ModItems.END_CRYSTAL_SHIELD;
+        }
+        return false;
+    }
+
+    private boolean isBlockingWithMagmaShield(LivingEntity livingEntity) {
+        if (livingEntity.isUsingItem()) {
+            return livingEntity.getStackInHand(Hand.OFF_HAND).getItem() == ModItems.MAGMA_SHIELD ||
+                    livingEntity.getStackInHand(Hand.MAIN_HAND).getItem() == ModItems.MAGMA_SHIELD;
         }
         return false;
     }
@@ -60,7 +76,7 @@ public class LivingEntityMixin {
     }
 
     private void damageShield(ItemStack shield) {
-        int fixedDamageAmount = 175;
+        int fixedDamageAmount = 65;
         shield.damage(fixedDamageAmount, new Random(), null);
     }
 }
