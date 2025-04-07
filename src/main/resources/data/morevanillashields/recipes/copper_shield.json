@@ -3,19 +3,21 @@
   "category": "equipment",
   "group": "shield",
   "pattern": [
-    "wrw",
+    "wcw",
     "www",
     " w "
   ],
   "key": {
-    "r": {
-      "item": "minecraft:redstone"
-    },
+    "c": [
+      {
+        "item": "minecraft:weathered_copper"
+      }
+    ],
     "w": {
       "tag": "minecraft:planks"
     }
   },
   "result": {
-    "item": "morevanillashields:redstone_shield"
+    "item": "morevanillashields:copper_shield"
   }
 }

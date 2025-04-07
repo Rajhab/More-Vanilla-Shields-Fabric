@@ -1,6 +1,7 @@
 {
   "type": "minecraft:smithing",
   "category": "equipment",
+  "group": "shield",
   "base": {
     "item": "morevanillashields:diamond_shield"
   },
