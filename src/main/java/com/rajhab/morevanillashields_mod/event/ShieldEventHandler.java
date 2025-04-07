@@ -74,7 +74,7 @@ public class ShieldEventHandler {
     }
 
     private static void damageShield(ItemStack shield, LivingEntity user) {
-        int fixedDamageAmount = 175;
+        int fixedDamageAmount = 65;
         shield.damage(fixedDamageAmount, user, (entity) -> {
         });
     }
