@@ -3,24 +3,22 @@
   "category": "equipment",
   "group": "shield",
   "pattern": [
-    "wcw",
-    "www",
+    "nmn",
+    "wnw",
     " w "
   ],
   "key": {
-    "c": [
-      {
-        "item": "minecraft:coal"
+    "m": {
+        "item": "minecraft:magma_block"
       },
-      {
-        "item": "minecraft:charcoal"
-      }
-    ],
+    "n": {
+      "item": "minecraft:netherrack"
+    },
     "w": {
       "tag": "minecraft:planks"
     }
   },
   "result": {
-    "id": "morevanillashields:coal_shield"
+    "id": "morevanillashields:magma_shield"
   }
 }

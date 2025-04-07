@@ -2,6 +2,7 @@ package com.rajhab.morevanillashields_mod.event;
 
 import com.rajhab.morevanillashields_mod.item.ModItems;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,6 +22,13 @@ public class ShieldEventHandler {
         ServerLivingEntityEvents.ALLOW_DAMAGE.register((attacker, victim, source) -> {
             if (attacker instanceof LivingEntity) {
 
+                if (isBlockingWithMagmaShield(attacker)) {
+                    Entity attackerEntity = victim.getAttacker();
+                    if (attackerEntity instanceof LivingEntity livingattacker) {
+                        livingattacker.setOnFireFor(5); // Set attacker on fire for 5 seconds
+                    }
+                }
+
                 if (isBlockingWithEndCrystalShield(attacker)) {
                         Random random = new Random();
                         if (random.nextInt(10) == 0) {
@@ -36,6 +44,14 @@ public class ShieldEventHandler {
         if (serverLivingEntity.isUsingItem()) {
             return serverLivingEntity.getStackInHand(Hand.OFF_HAND).getItem() == ModItems.END_CRYSTAL_SHIELD ||
                     serverLivingEntity.getStackInHand(Hand.MAIN_HAND).getItem() == ModItems.END_CRYSTAL_SHIELD;
+        }
+        return false;
+    }
+
+    private static boolean isBlockingWithMagmaShield(LivingEntity entity) {
+        if (entity.isUsingItem()) {
+            return entity.getStackInHand(Hand.MAIN_HAND).getItem() == ModItems.MAGMA_SHIELD ||
+                    entity.getStackInHand(Hand.OFF_HAND).getItem() == ModItems.MAGMA_SHIELD;
         }
         return false;
     }

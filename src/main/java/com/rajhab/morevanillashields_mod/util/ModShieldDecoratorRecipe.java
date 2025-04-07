@@ -45,6 +45,8 @@ public class ModShieldDecoratorRecipe extends ShieldDecorationRecipe {
                             !(itemStack3.isOf(ModItems.EMERALD_SHIELD)) &&
                             !(itemStack3.isOf(ModItems.AMETHYST_SHIELD)) &&
                             !(itemStack3.isOf(ModItems.REDSTONE_SHIELD)) &&
+                            !(itemStack3.isOf(ModItems.COPPER_SHIELD)) &&
+                            !(itemStack3.isOf(ModItems.MAGMA_SHIELD)) &&
                             !(itemStack3.isOf(ModItems.OBSIDIAN_SHIELD)) &&
                             !(itemStack3.isOf(ModItems.COAL_SHIELD)) &&
                             !(itemStack3.isOf(ModItems.END_CRYSTAL_SHIELD))
@@ -89,6 +91,8 @@ public class ModShieldDecoratorRecipe extends ShieldDecorationRecipe {
                         (itemStack3.isOf(ModItems.EMERALD_SHIELD)) ||
                         (itemStack3.isOf(ModItems.AMETHYST_SHIELD)) ||
                         (itemStack3.isOf(ModItems.REDSTONE_SHIELD)) ||
+                        (itemStack3.isOf(ModItems.COPPER_SHIELD)) ||
+                        (itemStack3.isOf(ModItems.MAGMA_SHIELD)) ||
                         (itemStack3.isOf(ModItems.OBSIDIAN_SHIELD)) ||
                         (itemStack3.isOf(ModItems.COAL_SHIELD)) ||
                         (itemStack3.isOf(ModItems.END_CRYSTAL_SHIELD))
