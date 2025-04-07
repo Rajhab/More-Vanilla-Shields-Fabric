@@ -1,6 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "category": "equipment",
+  "group": "shield",
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"
   },
