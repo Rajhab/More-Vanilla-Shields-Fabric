@@ -77,7 +77,7 @@ public class ShieldEventHandler {
     }
 
     private static void damageShield(ItemStack shield, LivingEntity user) {
-        int fixedDamageAmount = 175;
+        int fixedDamageAmount = 65;
 
         ItemStack mainHandStack = user.getStackInHand(Hand.MAIN_HAND);
         ItemStack offHandStack = user.getStackInHand(Hand.OFF_HAND);
