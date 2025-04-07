@@ -10,10 +10,7 @@
   "key": {
     "c": [
       {
-        "item": "minecraft:coal"
-      },
-      {
-        "item": "minecraft:charcoal"
+        "item": "minecraft:weathered_copper"
       }
     ],
     "w": {
@@ -21,6 +18,6 @@
     }
   },
   "result": {
-    "id": "morevanillashields:coal_shield"
+    "id": "morevanillashields:copper_shield"
   }
 }
